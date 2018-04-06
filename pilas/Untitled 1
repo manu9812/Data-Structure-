@@ -1,0 +1,38 @@
+  Crear pila y la lista de salida, inicialmente vacias.
+     MIENTRAS lista de entrada no este vacia y
+              no se ha encontrado ningun error HACER
+       Extraer el primer termino de la lista (lo llamaremos E)
+       SEGUN-SEA E
+         CASO E es número :
+           Insertar E al final de la lista de salida
+         CASO E es la variable x :
+           Insertar E al final de la lista de salida
+         CASO E es un paréntesis izquierdo :
+           Insertar E en la pila
+         CASO E es un paréntesis derecho :
+           MIENTRAS La pila no este vacía y
+                    su cima no sea un paréntesis izquierdo HACER
+             Extraer elemento de la pila
+             Insertarlo al final de la lista de salida
+           FIN-MIENTRAS
+           SI Encontramos el parentesis izquierdo ENTONCES
+             Extraerlo de la pila y destruirlo
+           SINO
+             Se ha detectado un ERROR 2
+           FIN-SI
+           Destruir E
+         CASO E es un operador :
+           MIENTRAS La pila no este vacía y
+                    su cima sea un operador
+                    de precedencia mayor o igual que la de E HACER
+             Extraer elemento de la pila
+             Insertarlo al final de la lista de salida
+           FIN-MIENTRAS
+           Insertar E en la pila
+       FIN-SEGUN-SEA
+    FIN-MIENTRAS
+    MIENTRAS Pila no esté vacía HACER
+      Extraer elemento de la pila
+      Insertarlo al final de la lista de salida
+    FIN-MIENTRAS
+    Destruir pila
