@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 
 /**
  * 
- * @author Santiago Otálora
+ * @author Manuela Garcia
  *
  */
 public class Calculator {
